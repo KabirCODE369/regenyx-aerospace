@@ -1,0 +1,1580 @@
+/* ==========================================
+   REGENYX AEROSPACE
+   Premium Website
+   Part 1
+========================================== */
+
+:root{
+
+    --bg:#000000;
+    --surface:rgba(255,255,255,.05);
+    --surface2:rgba(255,255,255,.08);
+
+    --white:#ffffff;
+    --text:#cfd5de;
+
+    --blue:#3cb8ff;
+    --cyan:#00f0ff;
+
+    --border:rgba(255,255,255,.12);
+
+    --radius:18px;
+
+    --transition:.45s ease;
+
+}
+
+/* ========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#000;
+    color:#fff;
+
+    font-family:Inter,sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#000;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#444;
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--blue);
+
+}
+
+/*==========================
+GLOBAL VIDEO
+==========================*/
+
+.video-background{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-100;
+
+overflow:hidden;
+
+}
+
+.video-background video{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+.video-overlay{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.72);
+
+z-index:-99;
+
+}
+
+/* ==========================================
+ LOADER
+========================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:999999;
+
+}
+
+.loader-logo{
+
+    width:150px;
+
+    margin-bottom:30px;
+
+    animation:pulse 2s infinite;
+
+}
+
+#loader h2{
+
+    font-weight:300;
+
+    letter-spacing:3px;
+
+    margin-bottom:30px;
+
+    color:#fff;
+
+}
+
+.loader-bar{
+
+    width:260px;
+
+    height:3px;
+
+    background:#222;
+
+    overflow:hidden;
+
+}
+
+.loader-bar span{
+
+    display:block;
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#008cff,#00f2ff);
+
+    animation:loading 3s forwards;
+
+}
+
+@keyframes loading{
+
+0%{
+
+width:0%;
+
+}
+
+100%{
+
+width:100%;
+
+}
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+opacity:.75;
+
+}
+
+}
+
+/* ==========================================
+ CURSOR
+========================================== */
+
+
+
+/* ==========================================
+ NAVBAR
+========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:500;
+
+    padding:22px 60px;
+
+    transition:.4s;
+
+}
+
+header.scrolled{
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo img{
+
+height:102px;
+width:auto;
+display:block;
+transition:.35s ease;
+
+}
+
+header.scrolled .logo img{
+
+height:100px;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:45px;
+
+}
+
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+    transition:.4s;
+
+}
+
+nav ul li a:hover{
+
+    color:var(--blue);
+
+}
+
+/* ==========================================
+ HERO
+========================================== */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+.hero-content{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+z-index:5;
+
+width:900px;
+
+max-width:90%;
+
+text-align:center;
+
+}
+
+
+.hero h4{
+
+    color:#00c6ff;
+
+    font-weight:500;
+
+    letter-spacing:6px;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:82px;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1 span{
+
+    color:#00b7ff;
+
+}
+
+.hero p{
+
+    width:820px;
+
+    max-width:90%;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#d2d2d2;
+
+    margin-bottom:50px;
+
+}
+
+/* ==========================================
+ BUTTONS
+========================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.btn{
+
+    padding:18px 42px;
+
+    background:#00a8ff;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    transition:.4s;
+
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 35px #00b7ff;
+
+}
+
+.btn-outline{
+
+    padding:18px 42px;
+
+    border:1px solid white;
+
+    color:white;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+}
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+/* ==========================================
+ SCROLL INDICATOR
+========================================== */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.scroll-indicator span{
+
+    width:2px;
+
+    height:70px;
+
+    display:block;
+
+    background:white;
+
+    animation:scroll 2s infinite;
+
+}
+
+@keyframes scroll{
+
+0%{
+
+opacity:0;
+
+transform:translateY(-15px);
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+}
+
+
+/*=================================================
+    GLOBAL SECTIONS
+=================================================*/
+
+section{
+
+background:transparent;
+
+position:relative;
+
+padding:140px 9%;
+
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:80px;
+
+}
+
+.section-title h5{
+
+    color:#36b7ff;
+    letter-spacing:6px;
+    font-size:14px;
+    margin-bottom:18px;
+    font-weight:500;
+
+}
+
+.section-title h2{
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:56px;
+    font-weight:700;
+    color:white;
+
+}
+
+/*=================================================
+MISSION
+=================================================*/
+
+.mission{
+
+background:transparent;
+
+}
+
+.mission-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:60px;
+
+}
+
+.mission-grid div{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    padding:45px;
+
+    transition:.45s;
+
+}
+
+.mission-grid div:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#26b6ff;
+
+    box-shadow:
+    0 0 60px rgba(0,183,255,.18);
+
+}
+
+.mission-grid p{
+
+    color:#d7d7d7;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+/*=================================================
+TECHNOLOGY
+=================================================*/
+
+.technology{
+
+    background: transparent;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:45px;
+
+}
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:55px;
+
+    border-radius:26px;
+
+    background:
+
+    linear-gradient(
+
+    145deg,
+
+    rgba(255,255,255,.06),
+
+    rgba(255,255,255,.02)
+
+    );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.5s;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+
+    right:-120px;
+
+    width:240px;
+
+    height:240px;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(0,183,255,.28),
+
+    transparent 70%
+
+    );
+
+    transition:.5s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-15px);
+
+    border-color:#2fb8ff;
+
+    box-shadow:
+
+    0 30px 80px rgba(0,183,255,.18);
+
+}
+
+.card:hover::before{
+
+    transform:scale(1.3);
+
+}
+
+.card h3{
+
+    font-family:'Space Grotesk';
+
+    font-size:58px;
+
+    color:#1cb7ff;
+
+    margin-bottom:20px;
+
+}
+
+.card h4{
+
+    font-size:28px;
+
+    margin-bottom:28px;
+
+    line-height:1.5;
+
+}
+
+.card p{
+
+    color:#d3d3d3;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+/*=================================================
+APPLICATIONS
+=================================================*/
+
+#applications{
+
+    background: transparent;
+
+}
+
+.application-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.application-grid div{
+
+    padding:50px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    background:
+
+    rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s;
+
+}
+
+.application-grid div:hover{
+
+    background:#0b2030;
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 0 45px rgba(0,183,255,.18);
+
+}
+
+/*=================================================
+/*==============================
+/*==============================
+LEADERSHIP
+==============================*/
+
+.leadership-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:45px;
+
+    margin-top:60px;
+
+}
+
+.leader-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    padding:45px;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.leader-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#27b7ff;
+
+    box-shadow:0 0 40px rgba(0,183,255,.18);
+
+}
+
+.leader-card img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #28b8ff;
+
+    margin-bottom:30px;
+
+}
+
+.leader-card h3{
+
+    font-family:'Space Grotesk';
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.leader-card h4{
+
+    color:#3dbbff;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+
+}
+
+.leader-card p{
+
+    line-height:1.9;
+
+    color:#d7d7d7;
+
+}
+
+/*=================================================
+CONTACT
+=================================================*/
+
+#contact{
+
+    background: transparent;
+
+}
+
+.contact-box{
+
+    width:850px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px;
+
+    border-radius:26px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.contact-box p{
+
+    font-size:20px;
+
+    color:#d7d7d7;
+
+    line-height:2;
+
+    margin-bottom:35px;
+
+}
+
+.contact-box a{
+
+    display:inline-block;
+
+    color:#39bbff;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.contact-box a:hover{
+
+    color:white;
+
+    text-shadow:
+
+    0 0 20px #00c8ff;
+
+}
+/*=================================================
+FOOTER
+=================================================*/
+
+footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    background:#000;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer img{
+
+    width:120px;
+
+    margin-bottom:20px;
+
+    opacity:.9;
+
+}
+
+footer h3{
+
+    font-family:'Space Grotesk';
+
+    letter-spacing:4px;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#aaa;
+
+    margin-bottom:15px;
+
+}
+
+footer small{
+
+    color:#666;
+
+}
+
+/*=================================================
+HOVER GLOW EFFECT (GLOBAL)
+=================================================*/
+
+a, .card, .application-grid div{
+
+    position:relative;
+
+}
+
+a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0%;
+
+    height:2px;
+
+    background:#00c8ff;
+
+    transition:.4s;
+
+}
+
+a:hover::after{
+
+    width:100%;
+
+}
+
+/*=================================================
+SCROLL REVEAL ANIMATIONS
+=================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=================================================
+NAVBAR SCROLL EFFECT
+=================================================*/
+
+header.scrolled{
+
+    box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+}
+
+/*=================================================
+GLOW BACKGROUND EFFECT
+=================================================*/
+
+section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    background:radial-gradient(circle,
+    rgba(0,183,255,.12),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:0;
+
+    opacity:.5;
+
+}
+
+section:nth-child(even)::before{
+
+    right:-200px;
+    top:-200px;
+
+}
+
+section:nth-child(odd)::before{
+
+    left:-200px;
+    bottom:-200px;
+
+}
+
+/*=================================================
+HERO PARTICLE LAYER (SUBTLE)
+=================================================*/
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:3px 3px;
+
+    opacity:.06;
+
+}
+
+/*=================================================
+BUTTON GLOW INTENSITY
+=================================================*/
+
+.btn{
+
+    box-shadow:0 0 15px rgba(0,183,255,.25);
+
+}
+
+.btn:hover{
+
+    box-shadow:
+    0 0 25px #00c8ff,
+    0 0 60px rgba(0,200,255,.5);
+
+}
+
+/*=================================================
+CARD LIGHT SWEEP EFFECT
+=================================================*/
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.2),
+    transparent
+    );
+
+    transition:.8s;
+
+}
+
+.card:hover::after{
+
+    left:140%;
+
+}
+
+/*=================================================
+APPLICATION HOVER LIGHT
+=================================================*/
+
+.application-grid div::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    background:radial-gradient(circle at center,
+    rgba(0,183,255,.15),
+    transparent 70%);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.application-grid div:hover::before{
+
+    opacity:1;
+
+}
+
+/*=================================================
+SCROLL PROGRESS BAR
+=================================================*/
+
+#progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    height:3px;
+
+    width:0%;
+
+    background:#00c8ff;
+
+    z-index:9999;
+
+}
+
+/*=================================================
+MOUSE LIGHT EFFECT
+=================================================*/
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:300px;
+
+    height:300px;
+
+    background:radial-gradient(circle,
+    rgba(0,183,255,.15),
+    transparent 60%);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:1;
+
+    opacity:.6;
+
+}
+
+/*=================================================
+SMOOTH FADE TRANSITIONS
+=================================================*/
+
+section{
+
+    transition:background .6s ease;
+
+}
+
+/*=================================================
+TEXT GRADIENT HIGHLIGHT
+=================================================*/
+
+.hero h1 span{
+
+    background:linear-gradient(90deg,#00c8ff,#008cff);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+/*=============================================
+RESPONSIVE DESIGN
+=============================================*/
+
+@media (max-width:1200px){
+
+.hero h1{
+
+font-size:64px;
+
+}
+
+.section-title h2{
+
+font-size:46px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.application-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.mission-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media (max-width:900px){
+
+header{
+
+padding:20px 30px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav ul{
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.application-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title h2{
+
+font-size:38px;
+
+}
+
+.card{
+
+padding:35px;
+
+}
+
+.card h3{
+
+font-size:44px;
+
+}
+
+.founder-box,
+
+.contact-box{
+
+padding:45px 25px;
+
+}
+
+}
+
+@media (max-width:600px){
+
+.hero-logo{
+
+width:120px;
+
+}
+
+.hero h4{
+
+font-size:12px;
+
+letter-spacing:3px;
+
+}
+
+.hero h1{
+
+font-size:36px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.section{
+
+padding:90px 8%;
+
+}
+
+.section-title h2{
+
+font-size:32px;
+
+}
+
+.logo img{
+
+height:48px;
+
+}
+
+nav ul{
+
+font-size:14px;
+
+gap:15px;
+
+}
+
+.btn,
+
+.btn-outline{
+
+padding:14px 28px;
+
+font-size:15px;
+
+}
+
+footer h3{
+
+font-size:22px;
+
+}
+
+}
+
+/*=============================
+CONTACT FORM
+=============================*/
+
+.contact-box form{
+
+    margin-top:45px;
+
+}
+
+.input-group{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+}
+
+.contact-box input,
+.contact-box textarea{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:16px;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.35s;
+
+    font-family:Inter,sans-serif;
+
+}
+
+.contact-box textarea{
+
+    resize:vertical;
+
+    margin-top:20px;
+
+    margin-bottom:30px;
+
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus{
+
+    border-color:#1cb7ff;
+
+    box-shadow:0 0 25px rgba(28,183,255,.25);
+
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder{
+
+    color:#aaa;
+
+}
+
+.contact-box button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+}
