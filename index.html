@@ -454,7 +454,7 @@
     <input type="hidden" name="_subject" value="New Website Enquiry - Regenyx Aerospace">
 
     <!-- Redirect after submission -->
-    <input type="hidden" name="_next" value="https://regenyx.space/thankyou.html">
+    <input type="hidden" name="_next" value="https://regenyx.space/?success=true">
 
     <div class="input-group">
 
@@ -530,7 +530,14 @@
     <!-- ========================= -->
 
     <script src="js/script.js"></script>
+<div id="success-popup" class="success-popup">
+    <div class="popup-box">
+        <h2>✅ Thank You!</h2>
+        <p>Your message has been sent successfully.</p>
 
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
 </body>
 
 </html>
