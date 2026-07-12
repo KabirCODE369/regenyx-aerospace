@@ -538,6 +538,29 @@
         <button onclick="closePopup()">Close</button>
     </div>
 </div>
+    <script>
+
+function closePopup(){
+
+    document.getElementById("success-popup").style.display="none";
+
+    history.replaceState({}, document.title, window.location.pathname);
+
+}
+
+window.onload=function(){
+
+    const params=new URLSearchParams(window.location.search);
+
+    if(params.get("success")==="true"){
+
+        document.getElementById("success-popup").style.display="flex";
+
+    }
+
+}
+
+</script>
 </body>
 
 </html>
