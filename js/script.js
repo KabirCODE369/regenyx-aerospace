@@ -149,11 +149,13 @@ link.classList.add("active");
 
 window.addEventListener("scroll",()=>{
 
-const hero=document.querySelector(".hero video");
+const hero = document.querySelector(".hero video");
 
-hero.style.transform=`translateY(${window.scrollY*0.25}px)`;
-
-});
+if (hero && window.innerWidth > 768) {
+    window.addEventListener("scroll", () => {
+        hero.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+    });
+}
 
 // =============================
 // HERO FADE
