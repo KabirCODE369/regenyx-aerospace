@@ -147,14 +147,16 @@ link.classList.add("active");
 // PARALLAX HERO
 // =============================
 
-window.addEventListener("scroll",()=>{
-
 const hero = document.querySelector(".hero video");
 
 if (hero && window.innerWidth > 768) {
+
     window.addEventListener("scroll", () => {
+
         hero.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+
     });
+
 }
 
 // =============================
