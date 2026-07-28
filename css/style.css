@@ -88,26 +88,31 @@ GLOBAL VIDEO
 
 .video-background{
     position:fixed;
-    inset:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     overflow:hidden;
-    z-index:-100;
+    z-index:-2;
 }
 
 .video-background video{
     position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
+    top:50%;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    transform:translate(-50%,-50%);
     object-fit:cover;
-    object-position:center center;
-    transform:none !important;
 }
 
 .video-overlay{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.55);
-    z-index:-99;
+    background:rgba(0,0,0,.45);
+    z-index:-1;
 }
 
 /* ==========================================
@@ -1638,155 +1643,43 @@ CONTACT FORM
 
 }
 
-@media screen and (max-width:992px){
+@media (max-width:768px){
 
-header{
-    padding:18px 24px;
+.hero{
+    min-height:100vh;
+    padding:120px 20px 60px;
 }
 
-nav{
+.hero-content{
+    width:100%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:2.6rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.hero-buttons{
+    display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:15px;
+}
+
+.hero-buttons a{
+    width:100%;
 }
 
 nav ul{
     flex-wrap:wrap;
     justify-content:center;
-    gap:18px;
-}
-
-.hero{
-    min-height:100vh;
-}
-
-.hero-content{
-    width:92%;
-}
-
-.hero h1{
-    font-size:46px;
-}
-
-.hero p{
-    width:100%;
-    font-size:17px;
-}
-
-.hero-buttons{
-    flex-direction:column;
-    align-items:center;
-}
-
-.mission-grid,
-.cards,
-.application-grid,
-.leadership-grid{
-    grid-template-columns:1fr;
-}
-
-.contact-box{
-    width:100%;
-    padding:40px 25px;
-}
-
-}
-
-@media screen and (max-width:768px){
-
-.logo img{
-    height:70px;
-}
-
-.hero{
-    min-height:100svh;
-    padding-top:120px;
-}
-
-.hero-content{
-    position:relative;
-    top:auto;
-    left:auto;
-    transform:none;
-    margin:auto;
-    text-align:center;
-}
-
-.hero h4{
-    letter-spacing:3px;
-    font-size:12px;
-}
-
-.hero h1{
-    font-size:36px;
-    line-height:1.2;
-}
-
-.hero p{
-    font-size:16px;
-    line-height:1.8;
-}
-
-.btn,
-.btn-outline{
-    width:100%;
-    text-align:center;
-}
-
-.section-title h2{
-    font-size:32px;
-}
-
-.card{
-    padding:30px;
-}
-
-.card h3{
-    font-size:40px;
-}
-
-.card h4{
-    font-size:22px;
-}
-
-.input-group{
-    grid-template-columns:1fr;
 }
 
 .video-background video{
-    object-fit:cover;
     object-position:center center;
-}
-
-}
-
-@media screen and (max-width:480px){
-
-.hero h1{
-    font-size:30px;
-}
-
-.hero p{
-    font-size:15px;
-}
-
-.logo img{
-    height:58px;
-}
-
-header{
-    padding:15px;
-}
-
-nav ul{
-    gap:12px;
-}
-
-nav ul li a{
-    font-size:13px;
-}
-
-.section{
-    padding:80px 7%;
 }
 
 }
