@@ -2,19 +2,25 @@
 // LOADER
 // =============================
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-setTimeout(()=>{
+    const loader = document.getElementById("loader");
 
-document.getElementById("loader").style.opacity="0";
+    if (loader) {
 
-setTimeout(()=>{
+        setTimeout(() => {
 
-document.getElementById("loader").style.display="none";
+            loader.style.opacity = "0";
 
-},800);
+            setTimeout(() => {
 
-},2200);
+                loader.style.display = "none";
+
+            }, 800);
+
+        }, 2200);
+
+    }
 
 });
 
@@ -22,19 +28,21 @@ document.getElementById("loader").style.display="none";
 // NAVBAR
 // =============================
 
-const header=document.querySelector("header");
+const header = document.querySelector("header");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-if(window.scrollY>50){
+    if (!header) return;
 
-header.classList.add("scrolled");
+    if (window.scrollY > 50) {
 
-}else{
+        header.classList.add("scrolled");
 
-header.classList.remove("scrolled");
+    } else {
 
-}
+        header.classList.remove("scrolled");
+
+    }
 
 });
 
@@ -42,44 +50,39 @@ header.classList.remove("scrolled");
 // SCROLL REVEAL
 // =============================
 
-const reveals=document.querySelectorAll("section");
+const reveals = document.querySelectorAll("section");
 
-function revealSections(){
+function revealSections() {
 
-const trigger=window.innerHeight*0.85;
+    const trigger = window.innerHeight * 0.85;
 
-reveals.forEach(section=>{
+    reveals.forEach(section => {
 
-const top=section.getBoundingClientRect().top;
+        const top = section.getBoundingClientRect().top;
 
-if(top<trigger){
+        if (top < trigger) {
 
-section.classList.add("active");
+            section.classList.add("active");
+
+        }
+
+    });
 
 }
 
-});
-
-}
-
-window.addEventListener("scroll",revealSections);
+window.addEventListener("scroll", revealSections);
 
 revealSections();
-
-// =============================
-// CUSTOM CURSOR
-// =============================
-
 
 // =============================
 // MOUSE LIGHT
 // =============================
 
-document.addEventListener("mousemove",(e)=>{
+document.addEventListener("mousemove", (e) => {
 
-document.body.style.setProperty("--mouse-x",e.clientX+"px");
+    document.body.style.setProperty("--mouse-x", e.clientX + "px");
 
-document.body.style.setProperty("--mouse-y",e.clientY+"px");
+    document.body.style.setProperty("--mouse-y", e.clientY + "px");
 
 });
 
@@ -87,59 +90,59 @@ document.body.style.setProperty("--mouse-y",e.clientY+"px");
 // SCROLL PROGRESS BAR
 // =============================
 
-const progress=document.createElement("div");
+const progress = document.createElement("div");
 
-progress.id="progress-bar";
+progress.id = "progress-bar";
 
 document.body.appendChild(progress);
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-const scrollTop=document.documentElement.scrollTop;
+    const scrollTop = document.documentElement.scrollTop;
 
-const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-const percent=(scrollTop/height)*100;
+    const percent = (scrollTop / height) * 100;
 
-progress.style.width=percent+"%";
+    progress.style.width = percent + "%";
 
 });
 
 // =============================
-// SMOOTH ACTIVE NAV LINKS
+// ACTIVE NAV LINKS
 // =============================
 
-const sections=document.querySelectorAll("section");
+const sections = document.querySelectorAll("section");
 
-const navLinks=document.querySelectorAll("nav ul li a");
+const navLinks = document.querySelectorAll("nav ul li a");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-let current="";
+    let current = "";
 
-sections.forEach(section=>{
+    sections.forEach(section => {
 
-const top=section.offsetTop-200;
+        const top = section.offsetTop - 200;
 
-if(pageYOffset>=top){
+        if (window.pageYOffset >= top) {
 
-current=section.getAttribute("id");
+            current = section.getAttribute("id");
 
-}
+        }
 
-});
+    });
 
-navLinks.forEach(link=>{
+    navLinks.forEach(link => {
 
-link.classList.remove("active");
+        link.classList.remove("active");
 
-if(link.getAttribute("href")==="#"+current){
+        if (link.getAttribute("href") === "#" + current) {
 
-link.classList.add("active");
+            link.classList.add("active");
 
-}
+        }
 
-});
+    });
 
 });
 
@@ -163,33 +166,37 @@ if (hero && window.innerWidth > 768) {
 // HERO FADE
 // =============================
 
-window.addEventListener("scroll",()=>{
+const heroContent = document.querySelector(".hero-content");
 
-const heroContent=document.querySelector(".hero-content");
+if (heroContent) {
 
-heroContent.style.opacity=1-window.scrollY/700;
+    window.addEventListener("scroll", () => {
 
-});
+        heroContent.style.opacity = 1 - window.scrollY / 700;
+
+    });
+
+}
 
 // =============================
-// BUTTON RIPPLE
+// BUTTON HOVER
 // =============================
 
-const buttons=document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".btn");
 
-buttons.forEach(button=>{
+buttons.forEach(button => {
 
-button.addEventListener("mouseenter",()=>{
+    button.addEventListener("mouseenter", () => {
 
-button.style.transform="translateY(-5px) scale(1.03)";
+        button.style.transform = "translateY(-5px) scale(1.03)";
 
-});
+    });
 
-button.addEventListener("mouseleave",()=>{
+    button.addEventListener("mouseleave", () => {
 
-button.style.transform="translateY(0px)";
+        button.style.transform = "translateY(0)";
 
-});
+    });
 
 });
 
@@ -198,4 +205,5 @@ button.style.transform="translateY(0px)";
 // =============================
 
 console.log("REGENYX AEROSPACE");
+
 console.log("Engineering Beyond Failure");
