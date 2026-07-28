@@ -138,12 +138,12 @@
          ICONS
     =========================================================== -->
 
-    <link rel="icon"
-          type="image/png"
-          href="images/favicon.png">
+   <link rel="icon"
+      type="image/png"
+      href="images/regenyx-aerospace-logo.png">
 
-    <link rel="apple-touch-icon"
-          href="images/favicon.png">
+   <link rel="apple-touch-icon"
+      href="images/regenyx-aerospace-logo.png">
     
 
     <!-- ==========================================================
@@ -204,8 +204,9 @@ content="https://regenyx.space/images/regenyx-aerospace-logo.png">
     muted
     loop
     playsinline
-    preload="auto"
+    preload="metadata"
     disablepictureinpicture
+    aria-hidden="true"
 >
 
         <source src="videos/space.mp4.mp4" type="video/mp4">
@@ -223,7 +224,9 @@ content="https://regenyx.space/images/regenyx-aerospace-logo.png">
 
     <div id="loader">
 
-        <img src="images/regenyx website.png" class="loader-logo">
+        <img src="images/regenyx-aerospace-logo.png"
+     class="loader-logo"
+     alt="Regenyx Aerospace Logo">
 
         <h2>Initializing Adaptive Structures...</h2>
 
@@ -256,6 +259,7 @@ content="https://regenyx.space/images/regenyx-aerospace-logo.png">
             <div class="logo">
 
               <img src="images/regenyx website.png" alt="Regenyx Logo">
+                <div id="google_translate_element"></div>
 
             </div>
 
@@ -722,6 +726,18 @@ window.onload=function(){
 }
 
 </script>
+    <script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages:
+        'en,fr,de,it,es,pt,nl,pl,cs,sk,sl,hu,ro,bg,hr,sr,el,da,sv,no,fi,et,lv,lt,is,ga,mt,uk,ar,fa',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
